@@ -13,6 +13,11 @@
       "commandName": "IISExpress",
       "launchUrl": "api/values",
       "environmentVariables": {
+        "MYSQL_IP": "localhost",
+        "MYSQL_PASWORD": "root",
+        "MYSQL_PORT": "3306",
+        "MYSQL_DB": "crudrepo",
+        "MYSQL_USER": "root",
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },

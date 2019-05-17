@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
+using Newtonsoft.Json;
 
 namespace CrudRepositoryExample.Data.Model
 {
@@ -17,6 +18,7 @@ namespace CrudRepositoryExample.Data.Model
         
         public string UserName { get; set; }
 
+        [JsonIgnore]
         public string Password { get; set; }
     }
 }

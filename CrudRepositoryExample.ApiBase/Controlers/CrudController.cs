@@ -1,11 +1,9 @@
-﻿using System;
-using System.Linq.Expressions;
-using CrudRepositoryExample.DataAccess.UnitOfWork;
-using CrudRepositoryExample.Utils;
+﻿using CrudRepositoryExample.DataAccess.UnitOfWork;
 using CrudRepositoryExample.Utils.Extensions;
+using CrudRepositoryExample.Utils.ObjectMapper;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CrudRepositoryExample.ApiBase
+namespace CrudRepositoryExample.ApiBase.Controlers
 {
     /// <summary>
     /// CrudController is a generic crud operations based WebApi controller.

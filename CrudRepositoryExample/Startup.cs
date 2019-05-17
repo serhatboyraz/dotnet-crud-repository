@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CrudRepositoryExample.Data.Context;
+using CrudRepositoryExample.Utils.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +29,7 @@ namespace CrudRepositoryExample
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<MasterContext>(x => { x.UseMySQL("server=localhost;user=root;password=root;database=crudrepo"); });
+            services.AddDbContext<MasterContext>(x => { x.UseMySQL(ConnectionExtensions.GetConnectionString()); });
 
         }
 

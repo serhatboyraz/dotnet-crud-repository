@@ -8,9 +8,4 @@
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CrudRepositoryExample.DataAccess\CrudRepositoryExample.DataAccess.csproj" />
-    <ProjectReference Include="..\CrudRepositoryExample.Data\CrudRepositoryExample.Data.csproj" />
-  </ItemGroup>
-
 </Project>

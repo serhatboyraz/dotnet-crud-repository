@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using CrudRepositoryExample.Data.Model;
+using CrudRepositoryExample.Utils.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrudRepositoryExample.Data.Context
@@ -20,7 +21,7 @@ namespace CrudRepositoryExample.Data.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseMySQL("server=localhost;user=root;password=root;database=crudrepo");
+                optionsBuilder.UseMySQL(ConnectionExtensions.GetConnectionString());
         }
 
         public DbSet<UserModel> Users { get; set; }

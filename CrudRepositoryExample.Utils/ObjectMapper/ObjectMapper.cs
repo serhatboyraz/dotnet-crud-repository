@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace CrudRepositoryExample.Utils
+namespace CrudRepositoryExample.Utils.ObjectMapper
 {
     public class ObjectMapper
     {
