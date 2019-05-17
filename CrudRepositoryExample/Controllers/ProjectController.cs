@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CrudRepositoryExample.Controllers
 {
     [Route("Project")]
-    public class ProjectController : BaseController<ProjectModel>
+    public class ProjectController : CrudController<ProjectModel>
     {
 
     }

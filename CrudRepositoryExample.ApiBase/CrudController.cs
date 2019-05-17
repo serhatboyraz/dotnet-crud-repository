@@ -2,12 +2,30 @@
 using System.Linq.Expressions;
 using CrudRepositoryExample.DataAccess.UnitOfWork;
 using CrudRepositoryExample.Utils;
+using CrudRepositoryExample.Utils.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrudRepositoryExample.ApiBase
 {
-    public class BaseController<T> : Controller where T : class
+    /// <summary>
+    /// CrudController is a generic crud operations based WebApi controller.
+    /// This controller contains only base CRUD operations.
+    /// </summary>
+    public class CrudController<T> : Controller where T : class
     {
+
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(long id)
+        {
+            using (UnitOfWork uow = new UnitOfWork())
+            {
+                T item = uow.GetRepository<T>().Get(id.GetIdentifierExpression<T>());
+                if (item == null)
+                    return StatusCode(404);
+                return Json(item);
+            }
+        }
         [HttpPut]
         public IActionResult Put([FromBody]T item)
         {
@@ -19,42 +37,33 @@ namespace CrudRepositoryExample.ApiBase
             return Json(item);
         }
 
-        [Route("{id}")]
         [HttpDelete]
+        [Route("{id}")]
         public IActionResult Delete(long id)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                ParameterExpression argParams = Expression.Parameter(typeof(T), "x");
-                Expression filterProp = Expression.Property(argParams, "Id");
-                ConstantExpression filterValue = Expression.Constant(id);
-                var expression = Expression.Lambda<Func<T, bool>>(Expression.Equal(filterProp, filterValue), argParams);
-                T item = uow.GetRepository<T>().Get(expression);
-                if (item != null)
-                    uow.GetRepository<T>().Delete(item);
-                else
+                T item = uow.GetRepository<T>().Get(id.GetIdentifierExpression<T>());
+                if (item == null)
                     return StatusCode(404);
 
+                uow.GetRepository<T>().Delete(item);
                 return StatusCode(uow.SaveChanges() > 0 ? 200 : 500);
             }
         }
-        [Route("{id}")]
+
         [HttpPost]
+        [Route("{id}")]
         public IActionResult Update(long id, [FromBody] T updateItem)
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                ParameterExpression argParams = Expression.Parameter(typeof(T), "x");
-                Expression filterProp = Expression.Property(argParams, "Id");
-                ConstantExpression filterValue = Expression.Constant(id);
-                var expression = Expression.Lambda<Func<T, bool>>(Expression.Equal(filterProp, filterValue), argParams);
-                T item = uow.GetRepository<T>().Get(expression);
+                T item = uow.GetRepository<T>().Get(id.GetIdentifierExpression<T>());
                 if (item == null)
                     return StatusCode(404);
-                ObjectMapper.MapExclude(item, updateItem, new string[] { "Id" });
 
+                ObjectMapper.MapExclude(item, updateItem, new string[] {typeof(T).GetIdentifierColumnName()});
                 uow.GetRepository<T>().Update(item);
-
                 return StatusCode(uow.SaveChanges() > 0 ? 200 : 500);
             }
         }

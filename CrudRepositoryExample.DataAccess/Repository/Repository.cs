@@ -21,12 +21,12 @@ namespace CrudRepositoryExample.DataAccess.Repository
         /// Repository instance ı başlatırç
         /// </summary>
         /// <param name="dbContext">Veritabanı bağlantı nesnesi</param>
-        /// <param name="authenticatedUser">Giriş yapmış kullanıcı session modeli</param>
         public Repository(DbContext dbContext)
         { 
             DbContext = dbContext;
             DbSet = dbContext.Set<T>();
         }
+
         public void Add(T entity)
         {
             DbSet.Add(entity);
