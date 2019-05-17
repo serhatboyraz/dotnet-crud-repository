@@ -1,21 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CrudRepositoryExample.ApiBase\CrudRepositoryExample.ApiBase.csproj" />
     <ProjectReference Include="..\CrudRepositoryExample.DataAccess\CrudRepositoryExample.DataAccess.csproj" />
     <ProjectReference Include="..\CrudRepositoryExample.Data\CrudRepositoryExample.Data.csproj" />
     <ProjectReference Include="..\CrudRepositoryExample.Utils\CrudRepositoryExample.Utils.csproj" />

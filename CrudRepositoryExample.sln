@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudRepositoryExample", "CrudRepositoryExample\CrudRepositoryExample.csproj", "{5587DE2E-5112-4328-B9DA-6B2121257DEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudRepositoryExample", "CrudRepositoryExample\CrudRepositoryExample.csproj", "{5587DE2E-5112-4328-B9DA-6B2121257DEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudRepositoryExample.Data", "CrudRepositoryExample.Data\CrudRepositoryExample.Data.csproj", "{E68E5BD7-2BCA-4878-9621-853F51043955}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudRepositoryExample.Data", "CrudRepositoryExample.Data\CrudRepositoryExample.Data.csproj", "{E68E5BD7-2BCA-4878-9621-853F51043955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudRepositoryExample.DataAccess", "CrudRepositoryExample.DataAccess\CrudRepositoryExample.DataAccess.csproj", "{D905FB78-1E9E-4C9F-BCBF-0458FE04D04B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudRepositoryExample.DataAccess", "CrudRepositoryExample.DataAccess\CrudRepositoryExample.DataAccess.csproj", "{D905FB78-1E9E-4C9F-BCBF-0458FE04D04B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudRepositoryExample.ApiBase", "CrudRepositoryExample.Utils\CrudRepositoryExample.ApiBase.csproj", "{6CF49F2D-C347-4903-90A8-3B881B18A92C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudRepositoryExample.ApiBase", "CrudRepositoryExample.ApiBase\CrudRepositoryExample.ApiBase.csproj", "{E51BB2F7-9029-46A6-A7DC-8005D00846E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudRepositoryExample.Utils", "CrudRepositoryExample.Utils\CrudRepositoryExample.Utils.csproj", "{485ECE83-B06E-4C01-BB6A-4D0D534431A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +31,14 @@ Global
 		{D905FB78-1E9E-4C9F-BCBF-0458FE04D04B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D905FB78-1E9E-4C9F-BCBF-0458FE04D04B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D905FB78-1E9E-4C9F-BCBF-0458FE04D04B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CF49F2D-C347-4903-90A8-3B881B18A92C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CF49F2D-C347-4903-90A8-3B881B18A92C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CF49F2D-C347-4903-90A8-3B881B18A92C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CF49F2D-C347-4903-90A8-3B881B18A92C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51BB2F7-9029-46A6-A7DC-8005D00846E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51BB2F7-9029-46A6-A7DC-8005D00846E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51BB2F7-9029-46A6-A7DC-8005D00846E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51BB2F7-9029-46A6-A7DC-8005D00846E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{485ECE83-B06E-4C01-BB6A-4D0D534431A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{485ECE83-B06E-4C01-BB6A-4D0D534431A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{485ECE83-B06E-4C01-BB6A-4D0D534431A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{485ECE83-B06E-4C01-BB6A-4D0D534431A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CrudRepositoryExample.Models;
+using CrudRepositoryExample.Data.Model; 
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrudRepositoryExample.Controllers
 {
-    [Route("X")]
-    public class XController : BaseController<XModel>
+    [Route("User")]
+    public class UserController : BaseController<UserModel>
     {
 
     }

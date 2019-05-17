@@ -6,13 +6,11 @@ using System.Text;
 
 namespace CrudRepositoryExample.Data.Model
 {
-    [Table("project")]
-    public class ProjectModel
+    public class ToDoModel
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
-
-        public string Title { get; set; }
+        public string Subject { get; set; }
     }
 }

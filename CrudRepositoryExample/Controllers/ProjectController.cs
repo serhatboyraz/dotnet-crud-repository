@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CrudRepositoryExample.Models;
+using CrudRepositoryExample.ApiBase;
+using CrudRepositoryExample.Data.Model;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CrudRepositoryExample.Controllers
 {
-    [Route("Y")]
-    public class YController : BaseController<YModel>
+    [Route("Project")]
+    public class ProjectController : BaseController<ProjectModel>
     {
 
     }
