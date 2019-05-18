@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CrudRepositoryExample.Data.Context;
 using CrudRepositoryExample.Utils.Extensions;
+using GraphiQl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -41,6 +42,7 @@ namespace CrudRepositoryExample
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseGraphiQl();
             app.UseMvc();
         }
     }
