@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using CrudRepositoryExample.Data.Enum;
 
 namespace CrudRepositoryExample.Data.Model
 {
@@ -14,6 +15,8 @@ namespace CrudRepositoryExample.Data.Model
         public long Id { get; set; }
 
         public string Title { get; set; }
+
+        public ProjectStatusEnum Status { get; set; }
 
     }
 }
