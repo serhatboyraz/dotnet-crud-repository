@@ -32,4 +32,8 @@ And content-type application/json body
 ![user-example-1](architecture/user-example-1.png)
 ![user-example-1](architecture/user-example-2.png)
 
+you can access the example postman requests this link : 
+
+https://documenter.getpostman.com/view/2234009/S1M3v5FN?version=latest
+
 # enjoy!
