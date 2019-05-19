@@ -43,6 +43,11 @@ namespace CrudRepositoryExample.DataAccess.Repository
             return DbSet.Any(predicate);
         }
 
+        public DbContext GetDbContext()
+        {
+            return DbContext;
+        }
+
         public int Count()
         {
             throw new NotImplementedException();

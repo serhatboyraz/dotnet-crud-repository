@@ -1,7 +1,10 @@
-﻿using CrudRepositoryExample.DataAccess.UnitOfWork;
+﻿using System.Linq;
+using CrudRepositoryExample.Data.Model;
+using CrudRepositoryExample.DataAccess.UnitOfWork;
 using CrudRepositoryExample.Utils.Extensions;
 using CrudRepositoryExample.Utils.ObjectMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudRepositoryExample.ApiBase.Controlers
 {
@@ -18,7 +21,10 @@ namespace CrudRepositoryExample.ApiBase.Controlers
         {
             using (UnitOfWork uow = new UnitOfWork())
             {
-                T item = uow.GetRepository<T>().Get(id.GetIdentifierExpression<T>());
+                var repository = uow.GetRepository<T>();
+                T item = repository.GetAll(id.GetIdentifierExpression<T>())
+                    .Include(repository.GetDbContext().GetIncludePaths(typeof(T))).FirstOrDefault();
+
                 if (item == null)
                     return StatusCode(404);
                 return Json(item);
