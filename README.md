@@ -1,5 +1,6 @@
 # dotnet-crud-repository
 a dotnetcore layered crud repository and unitofworks demo project
+now implemented graphql!
 
 # Dependency diagram:
 ![dependencies](architecture/dependency-diagram.png)
@@ -31,6 +32,25 @@ And content-type application/json body
 
 ![user-example-1](architecture/user-example-1.png)
 ![user-example-1](architecture/user-example-2.png)
+
+# graphql 
+you can use this project graphiql screen.
+Go to  `http://localhost:8012/graphql/` and send this example query : 
+
+
+`
+{
+ projects(status : 0){
+  title  
+  roles {
+    userName
+  }
+}
+}
+`
+
+![user-example-1](architecture/graphi-ql.png)
+
 
 you can access the example postman requests this link : 
 
