@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CrudRepositoryExample.Data.Context;
+using CrudRepositoryExample.DataAccess.GraphQueries;
+using CrudRepositoryExample.DataAccess.GraphSchemas;
+using CrudRepositoryExample.DataAccess.GraphTypes;
+using CrudRepositoryExample.DataAccess.UnitOfWork;
 using CrudRepositoryExample.Utils.Extensions;
 using GraphiQl;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +36,17 @@ namespace CrudRepositoryExample
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddDbContext<MasterContext>(x => { x.UseMySQL(ConnectionExtensions.GetConnectionString()); });
+            services.AddScoped<ProjectQuery>(); 
+            services.AddScoped<IDocumentExecuter, DocumentExecuter>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddTransient<ProjectGraphType>(); 
+            services.AddTransient<UserGraphType>(); 
+            services.AddTransient<ToDoGraphType>(); 
+
+            var serviceProvider = services.BuildServiceProvider();
+            services.AddScoped<ISchema>(x => new ProjectSchema(type => (GraphType) serviceProvider.GetService(type))
+                {Query = serviceProvider.GetService<ProjectQuery>()});
 
         }
 
