@@ -12,5 +12,10 @@ namespace CrudRepositoryExample.Data.Model
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
         public string Subject { get; set; }
+
+
+        public long ProjectId { get; set; }
+        public ProjectModel Project { get; set; }
+
     }
 }

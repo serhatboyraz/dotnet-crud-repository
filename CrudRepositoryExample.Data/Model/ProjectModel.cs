@@ -14,5 +14,6 @@ namespace CrudRepositoryExample.Data.Model
         public long Id { get; set; }
 
         public string Title { get; set; }
+
     }
 }

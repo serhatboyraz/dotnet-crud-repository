@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 
 namespace CrudRepositoryExample.DataAccess.Repository
 {
@@ -95,6 +96,11 @@ namespace CrudRepositoryExample.DataAccess.Repository
         /// <returns></returns>
         bool Any(Expression<Func<T, bool>> predicate);
 
+        /// <summary>
+        /// DbContext i verir.
+        /// </summary> 
+        /// <returns></returns>
+        DbContext GetDbContext();
 
 
 
